@@ -13,7 +13,7 @@ pip install --upgrade $BASE_URL/$CUDA_VERSION/jaxlib-0.1.55-$PYTHON_VERSION-none
 pip install -r requirements.txt
 ```
 
-Before running experiments, ensure the `./results/raw` folder exists in this directory.
+Before running experiments, ensure the `./raw` folder exists in this directory.
 
 To run the ablation study and runtime performance experiments, use the following commands from this directory:
 
@@ -32,7 +32,7 @@ The notebooks in the `./results` folder have code to process the emitted pickle 
 
 ## XLA Dumps
 
-There are a few XLA dumps present within the supplement. The first is the folder titled `text_xla_dumps`. This is for the synthetic experiment. The first model considered is a matrix-vector product. In pure numpy it can be expressed with:
+There are a few XLA dumps present within the supplement. This is for the synthetic experiment. The first model considered is a matrix-vector product. In pure numpy it can be expressed with:
 
 ```
 W = np.random.randn(5,5)  # a 5x5 random matrix (from a Multivariate Normal dist.)
