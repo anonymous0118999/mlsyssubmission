@@ -28,7 +28,7 @@ python memory_experiment.py --experiments mnist --thresh 128
 python memory_experiment.py --experiments lstm --thresh 1
 ```
 
-The notebooks in the `./results` folder have code to process the emitted pickle files and produce the plots found in the paper.
+The notebooks in the `./` folder have code to process the emitted pickle files and produce the plots found in the paper.
 
 ## XLA Dumps
 
