@@ -113,7 +113,7 @@ def clipped_grad(model, loss, params, l2_norm_clip, single_example_batch):
     nonempty_grads, tree_def = tree_flatten(grads)
     total_grad_norm = jnp.linalg.norm([jnp.linalg.norm(neg.ravel()) for neg in nonempty_grads])
     # divisor = jnp.max((total_grad_norm / l2_norm_clip, 1.))
-    divisor = jnp.clip(total_grad_norm / l2_norm_clip, a_max=1.)
+    divisor = jnp.maximum(total_grad_norm / l2_norm_clip, 1.)
     normalized_nonempty_grads = [g / divisor for g in nonempty_grads]
     return tree_unflatten(tree_def, normalized_nonempty_grads)
 
